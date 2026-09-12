@@ -104,7 +104,7 @@ You should see `green_erpnext_installer.sh`, `README.md`, `assets/` and `docs/`.
 ## 2.4 Make the Installer Executable
 
 ```bash
-chmod +x erpnext_install.sh
+chmod +x green_erpnext_installer.sh
 ```
 
 ## 2.5 Start the Installer
