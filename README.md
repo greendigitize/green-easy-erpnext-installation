@@ -2,59 +2,79 @@
   <img src="./assets/green-digitize-banner.svg" alt="Green Digitize — ERPNext Easy Installation" width="100%">
 </p>
 
+
 # Green Digitize — ERPNext Easy Installation
 
 > **A simple, step-by-step installation guide for ERPNext.**
 >
-> Built for fresh Ubuntu servers and VirtualBox VMs, with SSH-based administration and practical recovery guidance.
+> Built for users who want a clean ERPNext installation on a fresh Ubuntu server or VirtualBox VM, with SSH-based administration and clear recovery guidance.
 
 ---
 
-## 📦 Repository Files
+## 🚀 Installation Overview
 
-| File | Purpose |
-|---|---|
-| [`erpnext_install.sh`](./erpnext_install.sh) | Downloadable Green Digitize installer launcher |
-| [`assets/green-digitize-banner.svg`](./assets/green-digitize-banner.svg) | Green Digitize banner used by this README |
-| [`docs/recovery.md`](./docs/recovery.md) | Downloadable backup and recovery guide |
-| `README.md` | Complete installation tutorial |
+
+    Fresh Ubuntu VM / Server
+    Update System
+    Connect Through SSH
+    Clone Green Digitize Repository
+    Run Installer
+    Choose ERPNext Version
+    Configure Database & Site
+    Install ERPNext
+    Production Setup
+    Open ERPNext in Browser
+    Verify Installation
+
 
 ---
 
-# 1. Compatibility
+# 🖥️ 1. Compatibility
+
+## 1.1 Recommended Environment
 
 For a new ERPNext installation, use a **fresh Ubuntu VM or server**.
+
+Recommended for ERPNext v16 testing:
 
 | Component | Recommendation |
 |---|---|
 | Operating System | Ubuntu 22.04 LTS or newer supported release |
 | CPU | 2+ cores recommended |
-| RAM | 4 GB minimum for basic testing; more for production |
+| RAM | 4 GB minimum for basic testing; more is recommended for production |
 | Disk | 40 GB+ recommended; 100 GB is a comfortable VM size |
 | Access | SSH or local terminal with sudo access |
 | User | Non-root Linux user with sudo privileges |
 
-This guide is primarily written for **ERPNext v16**.
+> **Important:** Resource requirements depend on the number of users, background jobs, reports, attachments and other workloads. Production systems should be sized for the expected workload.
 
-### v16 installer requirements
+## 1.2 ERPNext Version
+
+This guide is primarily written for **ERPNext v16**. 
+
+The installer in this repository may offer other ERPNext versions as well. Always choose the version you have intentionally planned to deploy.
+
+### ERPNext v16 requirements in the installer
 
 - Python 3.14+
 - Node.js 24
-- Ubuntu 22.04+ or another OS supported by the installer for v16
+- Ubuntu 22.04+ or another operating system supported by the installer for v16
 
 > Do not install multiple major ERPNext versions into the same server environment. Use a separate VM/server for a different major version when possible.
 
 ---
 
-# 2. Installation
+# 🛠️ 2. Installation
 
-## 2.1 Update and Upgrade
+## 2.1 Update and Upgrade the System
+
+Run:
 
 ```bash
 sudo apt update && sudo apt -y upgrade
 ```
 
-Then reboot:
+When the upgrade finishes, reboot the server:
 
 ```bash
 sudo reboot
@@ -62,7 +82,11 @@ sudo reboot
 
 Reconnect through SSH after the server comes back online.
 
-## 2.2 Use a Non-Root User
+---
+
+## 2.2 Make Sure You Are NOT Running as Root
+
+The installer should be run from a **normal Linux user with sudo privileges**, not from a root shell.
 
 Check the current user:
 
@@ -70,248 +94,145 @@ Check the current user:
 whoami
 ```
 
-The installer must be run from a normal Linux user with sudo privileges.
+If the result is `root`, create or switch to a normal user before continuing.
 
-If necessary:
-
-```bash
-sudo adduser frappeuser
-sudo usermod -aG sudo frappeuser
-su - frappeuser
-```
-
-Verify:
+Example:
 
 ```bash
-whoami
+sudo adduser [frappeuser]
 ```
 
-## 2.3 Clone This Repository
+Then grant sudo access:
+
+```bash
+sudo usermod -aG sudo [frappeuser]
+```
+
+Switch to that user:
+
+```bash
+su - [frappeuser]
+```
+
+---
+
+## 2.3 Clone the Green Digitize Installer Repository
+
+Clone this repository:
 
 ```bash
 git clone https://github.com/greendigitize/green-easy-erpnext-installation.git
+```
+
+Enter the directory:
+
+```bash
 cd green-easy-erpnext-installation
 ```
 
-Check the repository files:
+Check the files:
 
 ```bash
 ls -la
 ```
 
-You should see `green_erpnext_installer.sh`, `README.md`, `assets/` and `docs/`.
+---
 
 ## 2.4 Make the Installer Executable
 
+Run:
+
 ```bash
-chmod +x green_erpnext_installer.sh
+chmod +x green_erpnext_installer
 ```
+
+---
 
 ## 2.5 Start the Installer
 
+Run:
+
 ```bash
-./green_erpnext_installer.sh
+source green_erpnext_installer
 ```
 
-The launcher downloads the pinned upstream installer revision and starts it interactively.
+The installer will guide you through the setup interactively.
 
 > **Do not run the installer as root.**
 
 ---
 
-# 3. Choose ERPNext Version
+# 📊 3. Choose ERPNext Version
 
-When the installer displays its version menu, choose:
+When the installer displays its version menu, choose the version you want to install.
+
+For the ERPNext v16 test installation, select:
 
 ```text
 Version 16
 ```
 
-The installer will configure the v16 branch and its required dependencies.
+For an interactive menu, this will normally appear as a numbered choice. Select the number shown beside **Version 16**.
 
 ---
 
-# 4. Installation Questions
+# ⚙️❓4. Installation Questions
 
-The exact prompts can vary with installer revisions. The normal flow includes configuration for the following.
+The exact prompts can vary with installer revisions, but the normal flow includes configuration for the following items.
 
-### Frappe Bench
+## 4.1 Frappe Bench
 
-A typical Bench directory is:
+The installer creates a Frappe Bench environment where the framework, ERPNext and the site are managed.
+
+A typical bench directory is:
 
 ```text
 frappe-bench
 ```
 
-### Site Name
+## 4.2 Site Name
 
-For local testing you may use:
+The site is the ERPNext database/site identity.
+
+For local testing you may use a name such as:
 
 ```text
 erpnext.local
 ```
 
-For a real deployment, use the configured domain.
+For a real deployment, use the domain name you have configured for the server.
 
-### Administrator Password
+## 4.3 Administrator Password
 
-Set and securely store a strong ERPNext **Administrator** password.
+Set a strong ERPNext **Administrator** password and store it securely.
 
-This is the ERPNext login password and is separate from the MariaDB database root password.
+This password is for logging into ERPNext. It is not the same thing as the MariaDB database root password.
 
-### Database Credentials
+## 4.4 Database Passwords
 
-Keep database credentials safe. They are required for maintenance, backup, recovery and migration work.
+The installation process may configure MariaDB and ask for database credentials.
 
----
-
-# 5. Install ERPNext
-
-When asked whether ERPNext should be installed, choose the affirmative option.
-
-Allow the installation to finish. Large installations can take time depending on CPU, RAM, disk speed and network bandwidth.
+Keep all database credentials safe. They are important for maintenance, backup, recovery and migration work.
 
 ---
 
-# 6. Production Setup
+# 📥5. Install ERPNext
 
-For a production-style environment, the installer may configure:
+When the installer asks whether ERPNext should be installed, choose the affirmative option.
 
-- Nginx
-- Supervisor
-- Redis
-- Scheduler/background jobs
-- Socket.IO
-- Required service configuration
+The installer will then fetch ERPNext and install it into the Frappe Bench environment.
+
+During this stage, allow the commands to finish. Large installations can take significant time depending on CPU, RAM, disk speed and network bandwidth.
 
 ---
-
-# 7. Open ERPNext
-
-Find the server IP:
-
-```bash
-hostname -I
-```
-
-For a local VM the address may look like:
-
-```text
-http://192.168.x.x
-```
-
-For a real server, use the configured domain.
-
-Log in with:
-
-```text
-Username: Administrator
-Password: <your ERPNext Administrator password>
-```
-
----
-
-# 8. Verify the Installation
-
-Enter the Bench directory:
-
-```bash
-cd ~/frappe-bench
-```
-
-Check Bench:
-
-```bash
-bench --version
-```
-
-List installed applications:
-
-```bash
-bench --site <your-site-name> list-apps
-```
-
-Run the site doctor:
-
-```bash
-bench --site <your-site-name> doctor
-```
-
----
-
-# 9. SSH Workflow
-
-```text
-Windows PC
-   │
-   │ SSH
-   ▼
-Ubuntu VM / Server
-   │
-   │ Git
-   ▼
-Green Digitize Repository
-   │
-   ▼
-erpnext_install.sh
-   │
-   ▼
-Frappe Bench
-   │
-   ▼
-ERPNext v16
-```
-
-Typical Windows PowerShell command:
-
-```bash
-ssh <linux-user>@<server-ip>
-```
-
----
-
-# 10. Troubleshooting
-
-<details>
-<summary><strong>Installer says it is running as root</strong></summary>
-
-```bash
-whoami
-```
-
-If it returns `root`, switch to a normal sudo-enabled user.
 
 </details>
 
 <details>
-<summary><strong>Git clone fails</strong></summary>
 
-```bash
-ping -c 4 github.com
-git --version
-```
+# 🧰6. Redis connection problem
 
-Then retry the clone command.
-
-</details>
-
-<details>
-<summary><strong>ERPNext page does not open</strong></summary>
-
-```bash
-hostname -I
-sudo supervisorctl status
-sudo systemctl status nginx
-```
-
-Inspect the actual service error before changing configuration.
-
-</details>
-
-<details>
-<summary><strong>Redis connection problem</strong></summary>
-
-From the Bench directory:
+From the Bench directory, use the appropriate Bench setup commands for your installation:
 
 ```bash
 cd ~/frappe-bench
@@ -321,46 +242,91 @@ bench setup supervisor
 sudo supervisorctl reload
 ```
 
-Then:
+Then inspect service status:
 
 ```bash
 sudo supervisorctl status
 ```
 
-Do not change Redis ports randomly; first confirm the current Bench configuration.
-
-</details>
-
-<details>
-<summary><strong>Installation stopped or failed</strong></summary>
-
-Do not immediately delete the entire environment. Capture the terminal error first and determine which installation step failed.
-
-For recovery and rebuild guidance, open [`docs/recovery.md`](./docs/recovery.md).
+Avoid changing Redis ports randomly. First confirm which ports and services the current Bench configuration expects.
 
 </details>
 
 ---
 
-# 11. Backup and Recovery
+# 💾 7. Backup and Recovery
 
-ERPNext is recoverable when important data has been preserved.
+ERPNext is recoverable when the important data has been preserved.
+
+The key rule is:
 
 > **Application files can often be rebuilt; deleted database/site data cannot be recreated automatically.**
 
-A damaged application environment does not necessarily mean business data is lost. If the database and site data remain intact, a rebuild may be possible without recreating business records.
+A damaged application environment does not necessarily mean that all business data is lost. The database and site data may remain intact and can sometimes be used during a rebuild or restoration.
 
-If the database, site files or backups have been deleted or corrupted, recovery depends on what valid backups remain.
+However, if the database, site directory, files or backups have been deleted or corrupted, the original data may not be recoverable without a valid backup.
 
-Read the full recovery guide:
+## 11.1 Before Destructive Repair
 
-**[Open the Backup & Recovery Guide](./docs/recovery.md)**
+Before removing an existing ERPNext installation, preserve:
+
+- Database backup
+- Site files
+- Private files
+- Public files
+- Configuration information
+- Encryption/secrets where required by your deployment
+
+## 7.2 Rebuild Concept
+
+A typical recovery flow is:
+
+```text
+Existing ERPNext problem
+        │
+        ▼
+Create / verify backups
+        │
+        ▼
+Determine whether the problem is application or data related
+        │
+        ├───────────────┐
+        ▼               ▼
+Application issue    Data issue
+        │               │
+        ▼               ▼
+Repair/rebuild      Restore valid backup
+        │               │
+        └───────┬───────┘
+                ▼
+        Run migrations/checks
+                │
+                ▼
+          Start services
+                │
+                ▼
+          Verify ERPNext
+```
+
+## 7.3 Important Recovery Warning
+
+Do not assume that reinstalling ERPNext will automatically bring back:
+
+- users
+- passwords
+- invoices
+- customers
+- accounting data
+- attachments
+- customizations
+
+Those depend on the database, site files and backups being preserved and restored correctly.
 
 ---
 
-# 12. Fresh Reinstallation
+# 🆕 8. Fresh Reinstallation
 
-Treat a completely fresh reinstall as a potentially destructive operation.
+A completely fresh reinstall should be treated as a **destructive operation** unless you have confirmed that all required data is backed up.
 
 Recommended sequence:
 
@@ -381,9 +347,9 @@ Never delete the old environment first and investigate backups later.
 
 ---
 
-# 13. Additional Apps
+# 🧩 9. Additional Apps
 
-The safest path is:
+The safest first installation path is:
 
 ```text
 ERPNext v16
@@ -397,22 +363,13 @@ Install additional apps one at a time
 Verify after each major change
 ```
 
-Third-party apps can have their own compatibility requirements.
+Third-party apps can have their own compatibility requirements. Test them separately instead of treating every additional app as part of the base ERPNext installation.
 
 ---
 
-# 14. Updating This Repository
+# 🔃 10. Clean Installation Checklist
 
-```bash
-cd ~/green-easy-erpnext-installation
-git pull
-```
-
-For production, review installer changes and back up the site/database before changing the installation workflow.
-
----
-
-# 15. Clean Installation Checklist
+Use this checklist before declaring the installation complete:
 
 - [ ] Ubuntu is updated
 - [ ] SSH access works
@@ -421,7 +378,7 @@ For production, review installer changes and back up the site/database before ch
 - [ ] Installer is executable
 - [ ] ERPNext v16 selected intentionally
 - [ ] Database credentials stored securely
-- [ ] Administrator password stored securely
+- [ ] ERPNext Administrator password stored securely
 - [ ] Site created successfully
 - [ ] ERPNext installed successfully
 - [ ] Supervisor/Nginx/Redis services are healthy where used
@@ -431,20 +388,30 @@ For production, review installer changes and back up the site/database before ch
 
 ---
 
-# 16. Green Digitize
+
+# 🌱 11. Green Digitize
 
 **Green Digitize** provides this repository as an easy starting point for deploying ERPNext with a clear installation path and practical recovery guidance.
 
-The goal is to make installation easier to understand, easier to repeat and easier to recover when something goes wrong.
+The goal of this project is to make the installation process easier to understand, easier to repeat and easier to recover when something goes wrong.
 
 ---
 
-## Important Notes
+## 📌 Important Notes
 
-- Review the installer before using it on a production server.
-- ERPNext, Frappe Framework and third-party applications have their own compatibility requirements.
+- This repository is an installation aid; always review the installer before using it on a production server.
+- ERPNext, Frappe Framework and third-party applications have their own release cycles and compatibility requirements.
 - Always maintain verified backups for production systems.
-- Never commit passwords, API keys or other secrets to GitHub.
+- Do not expose database credentials or secrets in GitHub.
+
+---
+
+## 📚 Official Resources
+
+- [ERPNext Documentation](https://docs.erpnext.com)
+- [Frappe Framework Documentation](https://docs.frappe.io)
+- [ERPNext on GitHub](https://github.com/frappe/erpnext)
+- [Frappe Framework on GitHub](https://github.com/frappe/frappe)
 
 ---
 
