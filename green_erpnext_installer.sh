@@ -284,7 +284,7 @@ setup_frappe_user() {
   # Re-enter only once, explicitly attaching the dedicated process to the real TTY.
   # The child then owns the interactive prompts and installation; the parent never resumes main().
   local bootstrap="/tmp/green_erpnext_installer_reexec.sh"
-  sudo cp "$0" "$bootstrap"
+  sudo cp -- "${BASH_SOURCE[0]}" "$bootstrap"
   sudo chown "$FRAPPE_USER:$FRAPPE_USER" "$bootstrap"
   sudo chmod 0755 "$bootstrap"
   info "Switching installer execution to $FRAPPE_USER for a clean Frappe installation."
