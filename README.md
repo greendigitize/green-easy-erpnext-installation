@@ -81,7 +81,7 @@ Reconnect through SSH after the server comes back online.
 The installer will prompt you to create a new user and automatically configure the required permissions for that user.
 
 <p align="center">
-  <img src="./assets/green-erpnext.png" width="100%">
+  <img src="./assets/user_creation.png" width="100%">
 </p>
 
 ---
@@ -130,7 +130,9 @@ The installer will guide you through the setup interactively.
 
 When the installer displays its version menu, choose the version you want to install.
 
-
+<p align="center">
+  <img src="./assets/green-erpnext.png" width="100%">
+</p>
 
 For an interactive menu, this will normally appear as a numbered choice. Select the number shown beside **Version 16**.
 
