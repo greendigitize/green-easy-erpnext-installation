@@ -91,7 +91,7 @@ The installer will prompt you to create a new user and automatically configure t
 Clone this repository:
 
 ```bash
-git clone https://github.com/greendigitize/green-easy-erpnext-installation.git
+git clone https://github.com/greendigitize/green-erpnext-installation.git
 ```
 
 Enter the directory:
