@@ -224,7 +224,7 @@ A damaged application environment does not necessarily mean that all business da
 
 However, if the database, site directory, files or backups have been deleted or corrupted, the original data may not be recoverable without a valid backup.
 
-## 11.1 Before Destructive Repair
+## 7.1 Before Destructive Repair
 
 Before removing an existing ERPNext installation, preserve:
 
