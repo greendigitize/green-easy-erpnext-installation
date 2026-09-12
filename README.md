@@ -15,6 +15,7 @@
 
 
     Fresh Ubuntu VM / Server
+    ERPNext V15 & V16
     Update System
     Connect Through SSH
     Clone Green Digitize Repository
