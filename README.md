@@ -130,12 +130,6 @@ Enter the directory:
 cd green-easy-erpnext-installation
 ```
 
-Check the files:
-
-```bash
-ls -la
-```
-
 ---
 
 ## 2.4 Make the Installer Executable
