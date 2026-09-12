@@ -15,7 +15,6 @@
 
 
     Fresh Ubuntu VM / Server
-    ERPNext V15 & V16
     Update System
     Connect Through SSH
     Clone Green Digitize Repository
@@ -36,8 +35,6 @@
 
 For a new ERPNext installation, use a **fresh Ubuntu VM or server**.
 
-Recommended for ERPNext v16 testing:
-
 | Component | Recommendation |
 |---|---|
 | Operating System | Ubuntu 22.04 LTS or newer supported release |
@@ -51,15 +48,9 @@ Recommended for ERPNext v16 testing:
 
 ## 1.2 ERPNext Version
 
-This guide is primarily written for **ERPNext v16**. 
+This guide supports ERPNext v15 and v16.
 
-The installer in this repository may offer other ERPNext versions as well. Always choose the version you have intentionally planned to deploy.
-
-### ERPNext v16 requirements in the installer
-
-- Python 3.14+
-- Node.js 24
-- Ubuntu 22.04+ or another operating system supported by the installer for v16
+The installer in this repository may offer both ERPNext versions, so always select the version you intentionally plan to deploy.
 
 > Do not install multiple major ERPNext versions into the same server environment. Use a separate VM/server for a different major version when possible.
 
