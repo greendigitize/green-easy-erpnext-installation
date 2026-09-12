@@ -99,7 +99,7 @@ Check the repository files:
 ls -la
 ```
 
-You should see `erpnext_install.sh`, `README.md`, `assets/` and `docs/`.
+You should see `green_erpnext_installer.sh`, `README.md`, `assets/` and `docs/`.
 
 ## 2.4 Make the Installer Executable
 
@@ -110,7 +110,7 @@ chmod +x erpnext_install.sh
 ## 2.5 Start the Installer
 
 ```bash
-./erpnext_install.sh
+./green_erpnext_installer.sh
 ```
 
 The launcher downloads the pinned upstream installer revision and starts it interactively.
