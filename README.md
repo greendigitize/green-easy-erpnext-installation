@@ -190,10 +190,6 @@ During this stage, allow the commands to finish. Large installations can take si
 
 ---
 
-</details>
-
-<details>
-
 # 🧰6. Redis connection problem
 
 From the Bench directory, use the appropriate Bench setup commands for your installation:
