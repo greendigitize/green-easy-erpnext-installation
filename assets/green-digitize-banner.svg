@@ -1,29 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" role="img" aria-label="Green Digitize ERPNext Easy Installation">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#063b2d"/>
-      <stop offset="55%" stop-color="#0b6b4f"/>
-      <stop offset="100%" stop-color="#12a66f"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="80%" cy="20%" r="65%">
-      <stop offset="0%" stop-color="#8ff0c8" stop-opacity="0.28"/>
-      <stop offset="100%" stop-color="#8ff0c8" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <rect width="1600" height="420" rx="28" fill="url(#bg)"/>
-  <rect width="1600" height="420" rx="28" fill="url(#glow)"/>
-  <g opacity="0.22" fill="#ffffff">
-    <circle cx="1340" cy="80" r="90"/>
-    <circle cx="1480" cy="240" r="150"/>
-    <circle cx="1190" cy="330" r="70"/>
-  </g>
-  <g transform="translate(110 90)">
-    <circle cx="70" cy="70" r="58" fill="#ffffff" opacity="0.96"/>
-    <path d="M40 77c21-41 68-54 101-28-25 5-49 17-67 36-13 14-22 29-28 44-7-15-9-32-6-52z" fill="#0b6b4f"/>
-    <path d="M30 111c33-27 68-41 104-39" fill="none" stroke="#12a66f" stroke-width="9" stroke-linecap="round"/>
-  </g>
-  <text x="270" y="160" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">GREEN DIGITIZE</text>
-  <text x="270" y="232" fill="#d9fff0" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="600">ERPNext Easy Installation</text>
-  <text x="270" y="292" fill="#ffffff" opacity="0.88" font-family="Arial, Helvetica, sans-serif" font-size="24">Simple steps • SSH friendly • Practical recovery guidance</text>
-  <rect x="270" y="328" width="410" height="4" rx="2" fill="#8ff0c8" opacity="0.8"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 620" role="img" aria-label="Green Digitize ERPNext Easy Installation">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#032d24"/><stop offset=".48" stop-color="#07583f"/><stop offset="1" stop-color="#0b9b68"/></linearGradient>
+ <linearGradient id="green" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b6ff4a"/><stop offset=".3" stop-color="#00d46a"/><stop offset="1" stop-color="#006b3f"/></linearGradient>
+ <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ffd84a"/><stop offset=".38" stop-color="#ff9d00"/><stop offset="1" stop-color="#e84b00"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#9affd2" stop-opacity=".32"/><stop offset="1" stop-color="#9affd2" stop-opacity="0"/></radialGradient>
+ <filter id="shadow"><feGaussianBlur stdDeviation="12"/></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="5"/></filter>
+ <pattern id="dots" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="2" fill="#9affd2" opacity=".25"/></pattern>
+</defs>
+<rect width="1800" height="620" rx="34" fill="url(#bg)"/>
+<ellipse cx="720" cy="180" rx="700" ry="330" fill="url(#glow)"/>
+<path d="M0 525 C310 420 540 600 850 500 S1390 420 1800 505 V620 H0Z" fill="#063d30" opacity=".8"/>
+<path d="M0 565 C330 445 575 635 910 535 S1430 470 1800 535" fill="none" stroke="#14c979" stroke-width="7" opacity=".55"/>
+<path d="M0 590 C350 485 570 650 940 555 S1450 505 1800 555" fill="none" stroke="#ffae18" stroke-width="3" opacity=".85"/>
+<circle cx="1540" cy="105" r="270" fill="url(#dots)"/>
+<circle cx="1540" cy="105" r="190" fill="none" stroke="#4de39e" stroke-width="2" opacity=".2"/>
+<circle cx="1540" cy="105" r="135" fill="none" stroke="#ffad20" stroke-width="2" opacity=".25"/>
+<g transform="translate(90 105)">
+ <ellipse cx="235" cy="385" rx="245" ry="45" fill="#000" opacity=".35" filter="url(#shadow)"/>
+ <path d="M70 315 C10 250 35 150 110 115 C160 90 215 112 255 145 L220 195 C175 158 128 160 105 202 C82 245 110 285 155 300Z" fill="url(#green)" stroke="#9affd2" stroke-width="4"/>
+ <path d="M145 42 C220 0 310 35 345 105 L320 160 C290 108 245 92 205 105 L160 132Z" fill="url(#orange)" stroke="#ffe47b" stroke-width="4"/>
+ <path d="M155 115 L310 88 L375 145 L375 320 L320 360 L320 175 L180 200Z" fill="url(#orange)" stroke="#ffe47b" stroke-width="4"/>
+ <path d="M85 145 L215 175 L215 330 L155 350 L155 235 L85 215Z" fill="url(#green)" stroke="#8affc6" stroke-width="4"/>
+ <path d="M150 355 C225 390 310 360 360 305" fill="none" stroke="url(#orange)" stroke-width="24" stroke-linecap="round"/>
+ <path d="M70 330 C145 385 260 390 345 320" fill="none" stroke="url(#green)" stroke-width="15" stroke-linecap="round"/>
+ <g fill="url(#orange)"><rect x="355" y="35" width="25" height="25" rx="4"/><rect x="390" y="70" width="38" height="38" rx="5"/><rect x="370" y="115" width="20" height="20" rx="4"/></g>
+ <g fill="url(#green)"><rect x="55" y="375" width="27" height="27" rx="4"/><rect x="95" y="400" width="40" height="40" rx="5"/><rect x="145" y="380" width="20" height="20" rx="4"/></g>
+</g>
+<line x1="520" y1="115" x2="520" y2="455" stroke="#78f5bd" stroke-width="2" opacity=".35"/>
+<text x="590" y="190" fill="#fff" font-family="Arial,Helvetica,sans-serif" font-size="78" font-weight="800" letter-spacing="2">GREEN <tspan fill="#ffad16">DIGITIZE</tspan></text>
+<text x="595" y="275" fill="#f4fff9" font-family="Arial,Helvetica,sans-serif" font-size="52" font-weight="700">ERPNext Easy Installation</text>
+<text x="600" y="330" fill="#bfffe0" font-family="Arial,Helvetica,sans-serif" font-size="25" letter-spacing="4">SIMPLE STEPS  •  SSH FRIENDLY  •  PRACTICAL RECOVERY</text>
+<rect x="600" y="370" width="950" height="72" rx="36" fill="#032f26" stroke="#28d989" stroke-width="2"/>
+<g font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700" fill="#fff">
+ <text x="650" y="414">⚡ Fast Setup</text><circle cx="870" cy="405" r="5" fill="#ffad16"/>
+ <text x="920" y="414">✓ Production Ready</text><circle cx="1190" cy="405" r="5" fill="#ffad16"/>
+ <text x="1240" y="414">◉ Open Source</text><circle cx="1450" cy="405" r="5" fill="#ffad16"/>
+ <text x="1490" y="414">Future Ready</text>
+</g>
+<text x="1310" y="505" fill="#a8ffd2" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">DIGITIZE TODAY</text>
+<text x="1310" y="540" fill="#fff" opacity=".82" font-family="Arial,Helvetica,sans-serif" font-size="17" letter-spacing="5">A SMARTER TOMORROW</text>
+<path d="M1160 505 C1340 430 1510 450 1770 390" fill="none" stroke="#42e69f" stroke-width="3" opacity=".65"/>
+<path d="M1160 525 C1370 455 1530 480 1790 420" fill="none" stroke="#ffad16" stroke-width="2" opacity=".75"/>
 </svg>
