@@ -76,35 +76,13 @@ Reconnect through SSH after the server comes back online.
 
 ---
 
-## 2.2 Make Sure You Are NOT Running as Root
+## 2.2 No Need to Panic About Creating a New User
 
-The installer should be run from a **normal Linux user with sudo privileges**, not from a root shell.
+The installer will prompt you to create a new user and automatically configure the required permissions for that user.
 
-Check the current user:
-
-```bash
-whoami
-```
-
-If the result is `root`, create or switch to a normal user before continuing.
-
-Example:
-
-```bash
-sudo adduser [frappeuser]
-```
-
-Then grant sudo access:
-
-```bash
-sudo usermod -aG sudo [frappeuser]
-```
-
-Switch to that user:
-
-```bash
-su - [frappeuser]
-```
+<p align="center">
+  <img src="./assets/green-erpnext.png" alt="Green Digitize — ERPNext Easy Installation" width="100%">
+</p>
 
 ---
 
