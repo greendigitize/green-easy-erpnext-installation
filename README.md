@@ -97,7 +97,7 @@ git clone https://github.com/greendigitize/green-erpnext-installation.git
 Enter the directory:
 
 ```bash
-cd green-easy-erpnext-installation
+cd green-erpnext-installation
 ```
 
 ---
