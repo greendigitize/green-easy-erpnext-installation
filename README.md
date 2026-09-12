@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/green-digitize-banner.svg" alt="Green Digitize — ERPNext Easy Installation" width="100%">
+  <img src="./assets/green-digitize-banner.svg" width="100%">
 </p>
 
 
@@ -81,7 +81,7 @@ Reconnect through SSH after the server comes back online.
 The installer will prompt you to create a new user and automatically configure the required permissions for that user.
 
 <p align="center">
-  <img src="./assets/green-erpnext.png" alt="Green Digitize — ERPNext Easy Installation" width="100%">
+  <img src="./assets/green-erpnext.png" width="100%">
 </p>
 
 ---
