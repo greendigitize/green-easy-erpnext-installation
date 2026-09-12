@@ -107,7 +107,7 @@ cd green-easy-erpnext-installation
 Run:
 
 ```bash
-chmod +x green_erpnext_installer
+chmod +x green_erpnext_installer.sh
 ```
 
 ---
@@ -117,7 +117,7 @@ chmod +x green_erpnext_installer
 Run:
 
 ```bash
-source green_erpnext_installer
+source green_erpnext_installer.sh
 ```
 
 The installer will guide you through the setup interactively.
@@ -130,11 +130,7 @@ The installer will guide you through the setup interactively.
 
 When the installer displays its version menu, choose the version you want to install.
 
-For the ERPNext v16 test installation, select:
 
-```text
-Version 16
-```
 
 For an interactive menu, this will normally appear as a numbered choice. Select the number shown beside **Version 16**.
 
